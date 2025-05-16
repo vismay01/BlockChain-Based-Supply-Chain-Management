@@ -1,74 +1,198 @@
-# A Blockchain Based Supply Chain Management System
+# Blockchain-Based Supply Chain Management System
 
-## Hardhat Migration
-In light of Truffle and Ganache's sunset, the project has been migrated to Hardhat. The old Truffle code  can be accessed from the `truffle_version` branch in this repository.
+## Project Title: Blockchain-Based Supply Chain Management
 
-## Dependencies
-Built upon the [Hardhat boilerplate code](https://github.com/NomicFoundation/hardhat-boilerplate), which helps integrate ReactJs with blockchain smart contracts.
+**A Major Project Report**
+Submitted in partial fulfillment of the requirement for the award of the degree of Bachelor of Technology
+in
+Computer Science & Engineering
 
-Tools and versions used -
+**Submitted by**
+* Vismay Singh (211426)
+* Dhruv Singh Kashyap (211401)
+* Tanu Singh (211467)
 
-- Node v20.12.0
-- npm v10.5.0
-- Hardhat v2.12.5
-- Ethers v5.4.7
-- Solidity v0.8.17
-- MUI v5.15.20
+**Under the guidance & supervision of**
+Dr. Arvind Kumar
 
-## Code Structure
-The ReactJs part of the code goes under `appfrontend`, smart contracts under `contracts`, and deployment configurations for these smart contracts under `scripts`.
+Department of Computer Science & Engineering and Information Technology
+Jaypee University of Information Technology, Waknaghat, Solan - 173234 (India)
+May 2025
 
-Frontend uses the compiled contracts to interact with them. The compiled contracts are stored in `appfrontend/src/contracts/` (as configured in the `deploy.js` file) and are accessed directly from the `.json` files.
+## Project Overview
 
-Frontend images for current state of the application are stored in the `images/currentstate` folder.
+This project aims to develop a decentralized application (dApp) for supply chain management using blockchain technology. The system enhances transparency, traceability, and security in supply chain operations by recording product information and transactions on a distributed, immutable ledger. This approach helps to mitigate issues such as counterfeit products, fraud, and inefficiencies caused by a lack of visibility.
 
-To know more about what's part of the frontend code, check out the README file in `appfrontend/`. 
+The application is built using Ethereum smart contracts for the core logic, a React.js frontend for user interaction, and utilizes tools like Hardhat for development and deployment.
 
-## Getting Started
+## Key Features
 
-### Install the Required Dependencies
+* **Product Tracking:** Enables tracking of products as they move through the supply chain, from producer to retailer.
+* **Role-Based Access:** Supports different roles, including producer, distributor, and retailer, each with specific functionalities.
+* **Immutable Records:** Uses blockchain to ensure that all product information and transactions are recorded permanently and cannot be altered.
+* **Smart Contract Automation:** Employs smart contracts to automate processes such as product registration, ownership transfer, and status updates.
+* **Decentralized System:** Reduces reliance on central authorities and increases trust among stakeholders.
+* **User-Friendly Interface:** Provides an intuitive web interface for interacting with the blockchain.
 
-- Clone the project and run `npm install` in both the root and `appfrontend` folders. This should install all of the required dependencies.
-- Get the MetaMask browser extension. Create a test network that points to the local Hardhat network (http://127.0.0.1:8545/), import the Hardhat accounts into MetaMask and use them to access the application. Without MetaMask, the application asks users to download wallet extensions like [Coinbase](https://www.coinbase.com/wallet) or [Metamask](https://metamask.io).
+## Technology Stack
 
-### Configure the Project
+* **Blockchain Platform:** Ethereum
+* **Smart Contract Language:** Solidity
+* **Frontend Framework:** React.js
+* **Development Environment:** Hardhat
+* **JavaScript Library:** Ethers.js
+* **UI Library:  MUI
+* **Node.js
+* **npm
+* **Web3 Provider:** MetaMask
 
-- Open up the console in the root project directory and run a new local Hardhat network with `npx hardhat node` to work on a local chain.
-- Use Hardhat commands `npx hardhat compile` to compile the smart contracts, and `npx hardhat run scripts/deploy.js --network localhost` to deploy specifically to the `localhost` environment.
-- If updating any folder names in the frontend code, please note that the path for storing the compiled contracts might need to be modified in the `scripts/deploy.js` file.
-- The migrations should successfully go through and the local Hardhat node should be updated with the contract deployment details.
- 
-For more commands, please refer to Hardhat's [guides and tutorials](https://hardhat.org/tutorial).
+## System Architecture
 
-### Get the Frontend Running
-Navigate to the `appfrontend` folder and run `npm start`. This should start the application and open it up in `localhost:3000`. Register with one of the MetaMask accounts as either a producer, distributor, or a retailer. 
+1.  **Smart Contracts:**
+    * Define the business logic for managing the supply chain.
+    * Handle product registration, ownership transfer, and status updates.
+    * Deployed on the Ethereum blockchain.
 
-<p align="center">
- <img src="images/currentstate/interface.gif" alt="Web Application GIF" height=400/>
-</p>
+2.  **Frontend (React.js):**
+    * Provides the user interface for interacting with the smart contracts.
+    * Allows users to view product information, track shipments, and manage transactions.
+    * Connects to the blockchain through MetaMask.
 
-## Current Functionalities
-Currently integrates with the available wallet address to carry out these functionalities and works only for one producer, distributor and retailer user accounts.
+3.  **MetaMask:**
+    * A browser extension that acts as a bridge between the user's browser and the Ethereum blockchain.
+    * Manages user accounts and facilitates transaction signing.
 
-In general, users can -
-- update the status of batches,
-- view their basic profile details,
-- view the batch details after creation,
-- view active and sold (history) batches and their details.
+4.  **Hardhat:**
+    * A development environment that helps to compile, test, and deploy smart contracts.
+    * Used for local blockchain setup and contract management.
 
-Producers can create batches of products and the rest of the users can buy and sell them.
+## Setup and Installation
 
-## Enhancements
-Please check the repository's project board for ongoing and future enhancements.
+### Prerequisites
 
-## Target State
+* Node.js (v20.12.0)
+* npm (v10.5.0)
+* MetaMask browser extension
 
-### Supply Chain Flow 
-<p>
- <img src="images/Supply Chain Flow.png" alt="Supply Chain Flow - BSCM" height=400/>
-</p>
+### Installation Steps
 
-### User Actions
-<p>
- <img src="images/User Actions.png" alt="User Actions - BSCM" height=400/>
-</p>
+1.  **Clone the Repository:**
+    ```bash
+    git clone <your_repository_url>
+    cd <project_directory>
+    ```
+
+2.  **Install Dependencies:**
+    ```bash
+    npm install
+    cd appfrontend
+    npm install
+    ```
+
+3.  **Start Hardhat Local Node:**
+    ```bash
+    npx hardhat node
+    ```
+    This command starts a local Ethereum blockchain network.  Keep this terminal window open.
+
+4.  **Deploy Smart Contracts:**
+     In a separate terminal:
+    ```bash
+    npx hardhat run scripts/deploy.js --network localhost
+    ```
+    This will deploy the smart contracts to the local blockchain.  The contract addresses will be displayed in the terminal.
+
+5.  **Connect MetaMask to Hardhat Local Network:**
+    * Open the MetaMask extension in your browser.
+    * Click on the network dropdown.
+    * Click "Add a network manually".
+    * Enter the following details:
+        * **Network Name:** Hardhat Local Network
+        * **New RPC URL:** http://127.0.0.1:8545/
+        * **Chain ID:** 31337
+        * **Currency Symbol:** ETH
+    * Click "Save".
+
+6.  **Import Accounts into MetaMask:**
+    * In the terminal where `npx hardhat node` is running, you will see a list of accounts and their private keys.
+    * In MetaMask, click on your account avatar.
+    * Select "Import Account".
+    * Paste the private key for one of the accounts (e.g., the one you want to use as the producer).
+    * Click "Import".
+    * Repeat this process to import additional accounts for the distributor and retailer roles.  It is recommended to import each account to a separate MetaMask account.
+
+7.  **Start the Frontend:**
+    ```bash
+    cd appfrontend
+    npm start
+    ```
+    This will start the React.js application in your browser (usually at http://localhost:3000).
+
+## How to Use the Application
+
+1.  **Connect to MetaMask:** Ensure MetaMask is connected to the "Hardhat Local Network" and that you have imported the accounts for the producer, distributor, and retailer.
+2.  **Register/Login:** The application should allow you to register or login using your MetaMask account.  The account you select in MetaMask will determine your role (producer, distributor, or retailer) in the application.
+3.  **Interact with the System:**
+    * **Producer:** Can create new product batches with relevant details.
+    * **Distributor:** Can manage the shipment and transfer of product batches.
+    * **Retailer:** Can receive product batches and make them available for sale.
+    * All roles can view product and batch details, and track the product's journey through the supply chain.
+
+## Directory Structure
+
+
+├── contracts/        # Solidity smart contracts
+├── scripts/          # Deployment scripts
+├── appfrontend/      # React.js frontend application
+│   ├── src/          # Source code
+│   ├── public/       # Static assets
+├── README.md         # Project documentation
+├── package.json      # Project dependencies
+├── hardhat.config.js # Hardhat configuration
+
+
+## Smart Contracts
+
+The `contracts/` directory contains the Solidity smart contracts that define the core logic of the supply chain management system.
+
+## Deployment
+
+The `scripts/deploy.js` script is used to deploy the smart contracts to the Ethereum blockchain.  It uses Hardhat to automate the deployment process.
+
+## Frontend
+
+The `appfrontend/` directory contains the React.js code for the user interface.  It allows users to interact with the smart contracts and the blockchain.
+
+## Testing
+* Smart contracts are tested using Hardhat's testing framework.  Tests are located in the `test/` directory.
+* The frontend can be tested using standard React testing libraries.
+
+## UML Diagrams
+*(Add UML diagrams here.  Since I cannot directly create images, describe what diagrams you would include)*
+
+* **Use Case Diagram:** Illustrates the interactions between different roles (Producer, Distributor, Retailer) and the system.
+* **Class Diagram:** Shows the structure of the smart contracts, including classes, attributes, and relationships.
+* **Sequence Diagram:** Depicts the flow of messages and actions for key processes, such as product registration and ownership transfer.
+
+## Future Enhancements
+
+* Implement more complex supply chain scenarios.
+* Add support for more product types and attributes.
+* Integrate with other blockchain networks.
+* Enhance the user interface with more advanced features.
+* Implement security best practices.
+
+## Troubleshooting
+
+* **Ensure Hardhat is configured correctly:** Check the `hardhat.config.js` file for network settings and compiler versions.
+* **Verify MetaMask connection:** Make sure MetaMask is connected to the correct network and that you have imported the necessary accounts.
+* **Check for contract deployment errors:** Review the output of the deployment script for any error messages.
+* **Clear browser cache:** If you encounter issues with the frontend, try clearing your browser's cache.
+
+## Credits
+
+* This project was developed by Vismay Singh, Dhruv Singh Kashyap, and Tanu Singh under the supervision of Dr. Arvind Kumar.
+
+## References
+
+*(Add any relevant references here)*
